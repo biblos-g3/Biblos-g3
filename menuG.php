@@ -1,6 +1,7 @@
 <?php
 include "funciones.php";
 controlSesion();
+$usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,22 +23,32 @@ controlSesion();
             </ul>
             <?php
             if ($usuario['tipo_id_tipo_usuario'] == 0) {
-                
+
                 mostrarOpcionesAdministracion();
             }
             ?>
-            
+
             <li><a href="salida.php">Log Out</a></li> 
         </ul> 
     </body>
 </html>
 <?php
 
-    function mostrarOpcionesAdministracion(){
-        echo "<li>Adminsitraci&oacute;n</li>
+function mostrarOpcionesAdministracion() {
+    echo "<li>Adminsitraci&oacute;n</li>
             <ul>        
-                <li><a href=''>Cat&aacutelogo</a></li> 
-                <li><a href=''>Usuarios</a></li> 
+                <li>Cat&aacutelogo</li> 
+                 <ul>
+                    <li><a href='altaCatalogoG.php'>Alta</a></li> 
+                    <li><a href='bajaCatalogoG.php'>Baja</a></li> 
+                    <li><a href='modificarCatalogoG.php'>Modificar</a></li> 
+                </ul>
+                <li>Usuarios</li> 
+                <ul>
+                    <li><a href='altaUsuarioG.php'>Alta</a></li> 
+                    <li><a href='bajaUsuarioG.php'>Baja</a></li> 
+                    <li><a href='modificarUsuarioG.php'>Modificar</a></li> 
+                </ul>
             </ul>
             ";
 }
