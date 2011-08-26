@@ -1,6 +1,13 @@
 <?php
+/**
+* Se encarga de la parte de interfaz de altas en el catalogo de la biblioteca
+* @author Nunhez
+ * @abstract Resumen para lo que sirve esto
+ * 
+*/
+
 include "funciones.php";
-controlSesion();
+//controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
@@ -20,7 +27,7 @@ $usuario = $_SESSION['usuario'];
             <label>Nombre t&iacute;tulo</label><input name="nombre_titulo" type="text" size="20" maxlength="20" /><br />
             <label>Autor</label>
             <?php
-            cargardorLista("autor", "id_autor", "nombre_autor");
+            cargardorLista2("autor", "id_autor","apellido1_autor", "nombre_autor",1);
             ?>
             <label>ISBN</label>
             <input name="isbn" type="text" size="20" maxlength="20" /><br />
@@ -57,6 +64,37 @@ $usuario = $_SESSION['usuario'];
             echo "<select name='dewey' size='$visibles'>";
             while ($salida = mysql_fetch_array($resultado)) {
                 echo "<option  value='" . $salida[$codCampo] . "'>" . htmlentities($salida[$valorCampo]) . "</option>";
+            }
+            echo "</select><br />";
+        }
+        
+        
+/**
+* Descripción breve (una línea)
+*
+* Descripción extensa. Todas las líneas que
+* sean necesarias
+* Todas las líneas comienzan con *
+  <- Esta línea es ignorada
+*
+* Este DocBlock documenta la función suma()
+ * @param string $nombreTabla Recibir el nombre de una tabla de base de datos
+ * @param string $codCampo Recibe el nombre de la columna de BD con el id de la tabla
+ * @return void
+ * @author Nuñez
+ * @version 1.0
+ * @since 0,9
+ * 
+*/
+        
+        function cargardorLista2($nombreTabla, $codCampo, $valorCampo1, $valorCampo2, $visibles=1) {
+            iniciaBD();
+            $query = "SELECT * FROM $nombreTabla";
+            $resultado = mysql_query($query);
+
+            echo "<select name='dewey' size='$visibles'>";
+            while ($salida = mysql_fetch_array($resultado)) {
+                echo "<option  value='" . $salida[$codCampo]."-".strtoupper(substr($salida[$valorCampo1],0,3))."'>" .htmlentities($salida[$valorCampo1]). "," .htmlentities($salida[$valorCampo2]). "</option>";
             }
             echo "</select><br />";
         }
