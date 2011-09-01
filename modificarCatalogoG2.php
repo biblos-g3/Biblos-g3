@@ -6,30 +6,30 @@
  * 
  */
 include "funciones.php";
-controlSesion();
+//controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Alta de Cat&aacute;logo</title>
+        <title> Modificar de Cat&aacute;logo</title>
+        <script type="text/javascript" src="./recursos/funciones.js"></script>
         <style type="text/css">@import url(recursos/calendar.css);</style>  
-        <link href="./recursos/" type="text/css" rel="stylesheet" />
         <script type="text/javascript" src="js/calendar.js"></script>
         <script type="text/javascript" src="js/calendar-es.js"></script>
         <script type="text/javascript" src="js/calendar-setup.js"></script>
         <script type="text/javascript" src="js/validaciones1.js"></script>
     </head>
     <body>
-        <form action="altaCatalogoP.php" method="post" onSubmit="return ValidaCampoVacioConFormato(this);">
+        <form action="modificarCatalogoP.php" method="post"onSubmit="return Valida(this);">
             <fieldset>            
                 <legend>Alta Cat&aacute;logo</legend>
                 <label>*Categoria Dewey</label><br />
                 <?php
                 cargardorLista("dewey", "categoria_dewey", "nombre_categoria_dewey", 10)
                 ?>
-                <label>*Nombre t&iacute;tulo</label><input name="nombre_titulo"  type="text" size="50" maxlength="50" class="Obligado"/><br />
+                <label>*Nombre t&iacute;tulo</label><input name="nombre_titulo"  type="text" size="50" maxlength="50" /><br />
                 <label>*Autor</label><br />
                 <?php
                 cargardorLista2("autor", "id_autor", "apellido1_autor", "nombre_autor", 5);
@@ -47,7 +47,7 @@ $usuario = $_SESSION['usuario'];
                 <label>Número de páginas</label>
                 <input name="num_paginas" type="text" size="5" maxlength="5" /><br />
                 <label>*Edición</label>
-                <input name="edicion" type="text" size="5" maxlength="5" class="Obligado" /><br />
+                <input name="edicion" type="text" size="5" maxlength="5" /><br />
                 <label>*Editorial</label>
                 <?php
                 cargardorLista("editorial", "id_editorial", "nombre_editorial");
@@ -56,25 +56,10 @@ $usuario = $_SESSION['usuario'];
                 <?php
                 cargardorLista("idioma_639_1", "id_idioma_639_1", "idioma_639_1")
                 ?>
-                <br /><input type="submit" value="Dar de alta">
+                <br /><input type="submit" value="Modificar">
                 <input type="reset" value="Borrar campos">
             </fieldset>
         </form>
-    </body>
-    <script type="text/javascript">
 
-       Calendar.setup(
-        {
-            inputField  : "fecha_publicacion",
-            ifFormat    : "%d/%m/%Y",
-            button      : "trigger"          
-        });
-        
-       Calendar.setup(
-        {
-            inputField  : "fecha_adquisicion",
-            ifFormat    : "%d/%m/%Y",
-            button      : "trigger2"          
-        });   
-  </script>  
+    </body>
 </html>

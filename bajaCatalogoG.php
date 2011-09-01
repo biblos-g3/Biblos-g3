@@ -7,7 +7,7 @@
 */
 
 include "funciones.php";
-//controlSesion();
+controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
@@ -18,15 +18,14 @@ $usuario = $_SESSION['usuario'];
     </head>
     <body>   
     
-        <form action="modificarCatalogoG2.php" method="post">
+        <form action="bajaCatalogoP.php" method="post">
             <fieldset>            
                 <legend>Baja Cat&aacute;logo</legend>
             <?php
             cargardorListaTitulos("titulo", "dewey_categoria_dewey","id_apellido", "id_titulo", "nombre_titulo",1);
             ?>
-     			<input type="submit" value="Modificar datos">
+     			<input type="submit" value="Dar de baja">
             </fieldset>
-        </form>
-       
+        </form>        
     </body>
 </html>
