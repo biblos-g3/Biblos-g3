@@ -170,12 +170,26 @@ function listarCatalogoXCampo($campoBusqueda, $valorBusqueda, $isExact) {
  * @param type $valorCampo
  * @param type $visibles 
  */
-        function cargardorLista($nombreTabla, $codCampo, $valorCampo, $visibles=1,$value) {
+        function cargardorLista($nombreTabla, $codCampo, $valorCampo, $visibles=1, $opcionSeleccione=null) {
             iniciaBD();
             $query = "SELECT * FROM $nombreTabla";
             $resultado = mysql_query($query);
+            $opcion0="";
+            
+            
+            $select = "<select name='$nombreTabla' size='$visibles' ";
+            if($opcionSeleccione){
+                $select .= "class='Obligado'";
+                 $opcion0 = "<option  value='' SELECTED>$opcionSeleccione";
+            }
+            
+            $select .= ">";
+            
+           
 
-            echo "<select name='$nombreTabla' size='$visibles'value='$value'>";
+            //echo "<select name='$nombreTabla' size='$visibles'value='$value'>";
+            echo $select;
+            echo $opcion0;
             while ($salida = mysql_fetch_array($resultado)) {
                 echo "<option  value='" . $salida[$codCampo] . "'>". htmlentities($salida[$valorCampo]).' ('.$salida[$codCampo].") </option>";
             }
@@ -199,12 +213,26 @@ function listarCatalogoXCampo($campoBusqueda, $valorBusqueda, $isExact) {
          * @since 0,9
          * 
          */
-        function cargardorLista2($nombreTabla, $codCampo, $valorCampo1, $valorCampo2, $visibles=1,$value) {
+        function cargardorLista2($nombreTabla, $codCampo, $valorCampo1, $valorCampo2, $visibles=1,$opcionSeleccione=null) {
             iniciaBD();
             $query = "SELECT * FROM $nombreTabla";
             $resultado = mysql_query($query);
-
-            echo "<select multiple='multiple' name='".$nombreTabla."[]' size='.$visibles.'value='$value'>";
+            $opcion0="";
+            
+            
+            $select = "<select multiple='multiple' name='".$nombreTabla."[]' size='$visibles' ";
+            if($opcionSeleccione){
+                $select .= "class='Obligado'";
+                 $opcion0 = "<option  value='' SELECTED>$opcionSeleccione";
+            }
+            
+            $select .= ">";
+            // $select = $select .">";
+            
+            
+            echo $select;
+            echo $opcion0;
+            
             while ($salida = mysql_fetch_array($resultado)) {
                 echo "<option  value='" . $salida[$codCampo] . "-" . strtoupper(substr($salida[$valorCampo1], 0, 3)) . "'>" . htmlentities($salida[$valorCampo1]) . "," . htmlentities($salida[$valorCampo2]) . "</option>";
             }

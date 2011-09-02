@@ -14,13 +14,13 @@ $usuario = $_SESSION['usuario'];
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Baja Cat&aacute;logo</title>
+        <title>Modificar Cat&aacute;logo</title>
     </head>
     <body>   
     
         <form action="modificarCatalogoG2.php" method="post">
             <fieldset>            
-                <legend>Baja Cat&aacute;logo</legend>
+                <legend>Modificar Cat&aacute;logo</legend>
             <?php
             cargardorListaTitulos("titulo", "dewey_categoria_dewey","id_apellido", "id_titulo", "nombre_titulo",1);
             ?>

@@ -22,6 +22,18 @@ $usuario = $_SESSION['usuario'];
         <script type="text/javascript" src="js/validaciones1.js"></script>
     </head>
     <body>
+        <?php
+        $titulo = $_POST['titulo'];
+
+        iniciaBD();
+
+        $dewey = strtok($titulo, "-");
+        $apellido3 = strtok("-");
+        $titulo3 = strtok("-");
+        
+        
+          ?>
+        
         <form action="modificarCatalogoP.php" method="post"onSubmit="return Valida(this);">
             <fieldset>            
                 <legend>Alta Cat&aacute;logo</legend>

@@ -6,7 +6,7 @@
  * 
  */
 include "funciones.php";
-controlSesion();
+//controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
@@ -22,17 +22,18 @@ $usuario = $_SESSION['usuario'];
         <script type="text/javascript" src="js/validaciones1.js"></script>
     </head>
     <body>
-        <form action="altaCatalogoP.php" method="post" onSubmit="return ValidaCampoVacioConFormato(this);">
+        <form action="altaCatalogoP.php" method="post" onSubmit="return ValidaCampoVacioConFormato2(this);">
             <fieldset>            
                 <legend>Alta Cat&aacute;logo</legend>
                 <label>*Categoria Dewey</label><br />
                 <?php
-                cargardorLista("dewey", "categoria_dewey", "nombre_categoria_dewey", 10)
+                cargardorLista("dewey", "categoria_dewey", "nombre_categoria_dewey", 10, "Seleccione");
+                //cargardorLista("editorial", "id_editorial", "nombre_editorial");
                 ?>
                 <label>*Nombre t&iacute;tulo</label><input name="nombre_titulo"  type="text" size="50" maxlength="50" class="Obligado"/><br />
                 <label>*Autor</label><br />
                 <?php
-                cargardorLista2("autor", "id_autor", "apellido1_autor", "nombre_autor", 5);
+                cargardorLista2("autor", "id_autor", "apellido1_autor", "nombre_autor", 5, "Seleccione");
                 ?>
                 <label>ISBN</label>
                 <input name="isbn" type="text" size="10" maxlength="10" /><br />
@@ -43,18 +44,18 @@ $usuario = $_SESSION['usuario'];
                 <input name="fecha_adquisicion" id="fecha_adquisicion" type="text" size="10" maxlength="10" />
                 <input type="button" id="trigger2" value="..." /><br />
                 <label>Sinopsis</label><br />
-                <textarea name="sinopsis" cols=40 rows=6></textarea><br />
+                <textarea name="sinopsis" cols=40 rows=6 class="Obligado"></textarea><br />
                 <label>Número de páginas</label>
                 <input name="num_paginas" type="text" size="5" maxlength="5" /><br />
                 <label>*Edición</label>
                 <input name="edicion" type="text" size="5" maxlength="5" class="Obligado" /><br />
                 <label>*Editorial</label>
                 <?php
-                cargardorLista("editorial", "id_editorial", "nombre_editorial");
+                cargardorLista("editorial", "id_editorial", "nombre_editorial",1,"Seleccione opci&oacute;n");
                 ?>
                 <label>*Idioma</label>
                 <?php
-                cargardorLista("idioma_639_1", "id_idioma_639_1", "idioma_639_1")
+                cargardorLista("idioma_639_1", "id_idioma_639_1", "idioma_639_1", 1,"Seleccione")
                 ?>
                 <br /><input type="submit" value="Dar de alta">
                 <input type="reset" value="Borrar campos">
