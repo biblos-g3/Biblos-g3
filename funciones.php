@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * 
+ */
 function controlSesion() {
     session_start();
 //include "altalibro_p.php";
@@ -10,6 +12,7 @@ function controlSesion() {
     else
         $usuario = $_SESSION['usuario'];
 }
+
 
 function iniciaBD() {
     $sgbd = mysql_pconnect("localhost", "biblosa", "1234");
@@ -111,6 +114,12 @@ function listarCatalogo() {
         die("Fallo al listar") . mysql_error();
 }
 
+/**
+ *
+ * @param type $campoBusqueda
+ * @param type $valorBusqueda
+ * @param type $isExact 
+ */
 function listarCatalogoXCampo($campoBusqueda, $valorBusqueda, $isExact) {
 
 

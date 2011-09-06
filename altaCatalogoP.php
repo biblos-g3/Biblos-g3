@@ -6,7 +6,7 @@
  * 
  */
 include "funciones.php";
-controlSesion();
+//controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
@@ -21,8 +21,8 @@ $usuario = $_SESSION['usuario'];
         $nombre_titulo = $_POST['nombre_titulo'];
         $autores = $_POST['autor'];
         $isbn = $_POST['isbn'];
-        $fecha_publicacion = $_POST['fecha_publicacion'];
-        $fecha_adquisicion = $_POST['fecha_adquisicion'];
+        $fecha_publicacion = "str_to_date('".$_POST['fecha_publicacion']."','%d/%m/%Y')";
+        $fecha_adquisicion = "str_to_date('".$_POST['fecha_adquisicion']."','%d/%m/%Y')";
         $sinopsis = $_POST['sinopsis'];
         $num_paginas = $_POST['num_paginas'];
         $edicion = $_POST['edicion'];
@@ -42,7 +42,7 @@ $usuario = $_SESSION['usuario'];
 
         $query = " INSERT INTO titulo 
                        (dewey_categoria_dewey, id_apellido, id_titulo, nombre_titulo, isbn, fecha_publicacion, fecha_adquisicion, sinopsis, num_paginas, edicion, editorial_id_editorial, idioma_639_1_id_idioma_639_1) 
-                       VALUES('$cat_dewey', '$apellido3_1', '$titulo3', '$nombre_titulo', '$isbn', '$fecha_publicacion', '$fecha_adquisicion', '$sinopsis', '$num_paginas', '$edicion' , '$editorial', '$idioma')";
+                       VALUES('$cat_dewey', '$apellido3_1', '$titulo3', '$nombre_titulo', '$isbn', $fecha_publicacion, $fecha_adquisicion, '$sinopsis', '$num_paginas', '$edicion' , '$editorial', '$idioma')";
 
         $resultado = mysql_query($query);
         if ($resultado)

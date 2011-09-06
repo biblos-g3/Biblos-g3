@@ -1,11 +1,10 @@
 <?php
 /**
-* Se encarga de la parte de interfaz de altas en el catalogo de la biblioteca
-* @author Nunhez
-* @abstract Interfaz grafica alta catalogo 
-* 
-*/
-
+ * Se encarga de la parte de interfaz de altas en el catalogo de la biblioteca
+ * @author Nunhez
+ * @abstract Interfaz grafica alta catalogo 
+ * 
+ */
 include "funciones.php";
 //controlSesion();
 $usuario = $_SESSION['usuario'];
@@ -17,16 +16,15 @@ $usuario = $_SESSION['usuario'];
         <title>Modificar Cat&aacute;logo</title>
     </head>
     <body>   
-    
+
         <form action="modificarCatalogoG2.php" method="post">
             <fieldset>            
                 <legend>Modificar Cat&aacute;logo</legend>
-            <?php
-            cargardorListaTitulos("titulo", "dewey_categoria_dewey","id_apellido", "id_titulo", "nombre_titulo",1);
-            ?>
-     			<input type="submit" value="Modificar datos">
+                <?php
+                cargardorListaTitulos("titulo", "dewey_categoria_dewey", "id_apellido", "id_titulo", "nombre_titulo", 1);
+                ?>
+                <input type="submit" value="Modificar datos">
             </fieldset>
         </form>
-       
-    </body>
-</html>
+        
+

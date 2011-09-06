@@ -5,14 +5,17 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
     </head>
     <body>
-        <div>TODO write content</div>
-        <select name="AAA" value="2">
+        <select name="lista">
             <option value="1">1</option>
             <option value="2" selected>2</option>
+            <option value="3">3</option>
         </select>
+        <?php
+        // put your code here
+        ?>
     </body>
 </html>
