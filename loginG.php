@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
-        <link href="./recursos/login.css" type="text/css" rel="stylesheet" />
+        <link href="css/login.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <div id="login">

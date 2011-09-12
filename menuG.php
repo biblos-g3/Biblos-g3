@@ -1,6 +1,6 @@
 <?php
-include "funciones.php";
-controlSesion();
+include "recursos/funciones.php";
+//controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
@@ -18,8 +18,8 @@ $usuario = $_SESSION['usuario'];
         <ul> 
             <li>Consultas</li>
             <ul>        
-                <li><a href="consulta_general.php">Consulta general</a></li> 
-                <li><a href="cespecificaG.php">Consulta especifica</a></li> 
+                <li><a href="usuario/consulta_general.php">Consulta general</a></li> 
+                <li><a href="usuario/cespecificaG.php">Consulta especifica</a></li> 
             </ul>
             <?php
             if ($usuario['tipo_id_tipo_usuario'] == 0) {
@@ -39,15 +39,15 @@ function mostrarOpcionesAdministracion() {
             <ul>        
                 <li>Cat&aacutelogo</li> 
                  <ul>
-                    <li><a href='altaCatalogoG.php'>Alta</a></li> 
-                    <li><a href='bajaCatalogoG.php'>Baja</a></li> 
-                    <li><a href='modificarCatalogoG.php'>Modificar</a></li> 
+                    <li><a href='gcatalogo/altaCatalogoG.php'>Alta</a></li> 
+                    <li><a href='gcatalogo/bajaCatalogoG.php'>Baja</a></li> 
+                    <li><a href='gcatalogo/modificarCatalogoG.php'>Modificar</a></li> 
                 </ul>
                 <li>Usuarios</li> 
                 <ul>
-                    <li><a href='altaUsuarioG.php'>Alta</a></li> 
-                    <li><a href='bajaUsuarioG.php'>Baja</a></li> 
-                    <li><a href='modificarUsuarioG.php'>Modificar</a></li> 
+                    <li><a href='gusuario/altaUsuarioG.php'>Alta</a></li> 
+                    <li><a href='gusuario/bajaUsuarioG.php'>Baja</a></li> 
+                    <li><a href='gusuario/modificarUsuarioG.php'>Modificar</a></li> 
                 </ul>
             </ul>
             ";
