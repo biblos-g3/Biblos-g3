@@ -38,7 +38,7 @@ $usuario = $_SESSION['usuario'];
 
         $resultado = mysql_query($query);
         if ($resultado)
-            echo " Modificacion de libro correcta.";
+            echo " Modificaci&oacute;n de usuario correcta.";
         else
             die("Fallo al modificar libro" . mysql_error());
         ?>
