@@ -1,6 +1,6 @@
 <?php
 /**
- * Se encarga de la parte de interfaz de altas en el catalogo de la biblioteca
+ * Se encarga de la parte de interfaz de altas en el Catalogo del Usuario de la biblioteca
  * @author Nunhez
  * @abstract Interfaz grafica alta catalogo 
  * 
@@ -13,35 +13,34 @@ $usuario = $_SESSION['usuario'];
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <?php fijaPlantillaCSS();?>
         <title></title>
     </head>
     <body>
         <?php
         $dni = $_POST['dni'];
         $clave = $_POST['clave'];
-        $nombre_usuario = $_POST['nombre'];
-        $apellido1_usuario = $_POST['apellido_1'];
-        $apellido2_usuario = $_POST['apellido_2'];
+        $nombre = $_POST['nombre'];
+        $apellido1 = $_POST['apellido_1'];
+        $apellido2 = $_POST['apellido_2'];
         $email = $_POST['email'];
         $telefono = $_POST['telefono'];
         $direccion = $_POST['direccion'];
-        $plantilla_id_plantilla = $_POST['plantilla'];
-        $tipo_id_tipo_usuario = $_POST['tipo_usuario'];
-        
+        $id_plantilla = $_POST['plantilla'];
+        $tipoUsuario = $_POST['tipo'];
 
         iniciaBD();
-
-        $query = " UPDATE usuario
-                      SET email='$email', telefono='$telefono', direccion='$direccion'  
+        $query = " UPDATE usuario 
+                      SET clave='$clave', nombre_usuario='$nombre', apellido1_usuario='$apellido1', apellido2_usuario='$apellido2', email='$email', 
+                          telefono='$telefono', direccion='$direccion', plantilla_id_plantilla='$id_plantilla', tipo_id_tipo_usuario='$tipoUsuario' 
                     WHERE dni='$dni'";
         echo $query;
 
         $resultado = mysql_query($query);
         if ($resultado)
-            echo " Modificaci&oacute;n de usuario correcta.";
+            echo " Modificacion del Usuario $nombre, $apellido1 correcto.";
         else
-            die("Fallo al modificar libro" . mysql_error());
+            die("Fallo al modificar el usuario" . mysql_error());
         ?>
     </body>
 </html>
-

@@ -6,13 +6,14 @@
  * 
  */
 include "../recursos/funciones.php";
-//controlSesion();
+controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <?php fijaPlantillaCSS(); ?>
         <title>Modificar Cat&aacute;logo</title>
     </head>
     <body>   
@@ -26,5 +27,6 @@ $usuario = $_SESSION['usuario'];
                 <input type="submit" value="Modificar datos">
             </fieldset>
         </form>
-        
-
+        <br><a href="../usuario/menuG.php">Volver al men&uacute;</a>
+    </body>
+</html>

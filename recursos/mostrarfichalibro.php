@@ -1,12 +1,14 @@
 <?php
 include "funciones.php";
-//controlSesion();
+controlSesion();
+
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <?php fijaPlantillaCSS();?>
+        <title>Ficha completa de libro</title>
     </head>
     <body>
         <h1>Ficha completa de libro</h1>
@@ -22,7 +24,7 @@ include "funciones.php";
                 AND id_apellido='$id_apellido'
                 AND id_titulo='$id_titulo'";
 
-        //echo $sql;
+  
 
         $resultado = mysql_query($sql);
         if ($resultado) {
@@ -79,4 +81,5 @@ include "funciones.php";
             echo "Fallo consulta:" . mysql_error();
         ?>
     </body>
+    <br><a href="../usuario/menuG.php">Volver al men&uacute;</a>
 </html>

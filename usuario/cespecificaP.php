@@ -1,10 +1,11 @@
 <?php
 include "../recursos/funciones.php";
-//controlSesion();
+controlSesion();
 ?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <?php fijaPlantillaCSS();?>
         <title>Cpnsulta Espec&iacute;fica</title>
     </head>
     <body>
@@ -43,5 +44,6 @@ include "../recursos/funciones.php";
                 die("Opcion de busqueda no valida");
         }
         ?>
+        </br><a href="menuG.php">Volver al men&uacute;</a>
     </body>
 </html>

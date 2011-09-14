@@ -6,13 +6,14 @@
  * 
  */
 include "../recursos/funciones.php";
-//controlSesion();
+controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <?php fijaPlantillaCSS();?>
         <title>Alta de Cat&aacute;logo</title>
     </head>
     <body>
@@ -41,5 +42,6 @@ $usuario = $_SESSION['usuario'];
             die("Fallo al insertar usuario" . mysql_error());
         ?>
     </body>
+    <br><a href="../usuario/menuG.php">Volver al men&uacute;</a>
 
 </html>

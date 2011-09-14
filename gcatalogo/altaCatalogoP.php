@@ -6,13 +6,14 @@
  * 
  */
 include "../recursos/funciones.php";
-//controlSesion();
+controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <?php fijaPlantillaCSS();?>
         <title>Alta de Cat&aacute;logo</title>
     </head>
     <body>
@@ -33,9 +34,7 @@ $usuario = $_SESSION['usuario'];
 
         iniciaBD();
 
-
         // Inserto el titulo
-
         $autor1 = $autores[0];
         $codAutor_1 = strtok($autor1, "-");
         $apellido3_1 = strtok("-");
@@ -49,7 +48,6 @@ $usuario = $_SESSION['usuario'];
             echo " Alta de libro correcta.";
         else
             die("Fallo al insertar libro" . mysql_error());
-
 
         // Sacamos el codigo del autor y el codigo del apellido tokenizando el value del formulario
     
@@ -65,7 +63,6 @@ $usuario = $_SESSION['usuario'];
                 $query = " INSERT INTO titulo_has_autor 
                        (titulo_dewey_categoria_dewey, titulo_id_apellido, titulo_id_titulo, autor_id_autor) 
                        VALUES('$cat_dewey', '$apellido3_1', '$titulo3', '$codAutor')";
-               
 
                 $resultado = mysql_query($query);
                 if ($resultado)
@@ -75,6 +72,7 @@ $usuario = $_SESSION['usuario'];
             }
         }
         ?>
+        <br><a href="../usuario/menuG.php">Volver al men&uacute;</a>
     </body>
 
 </html>

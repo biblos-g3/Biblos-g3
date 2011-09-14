@@ -6,7 +6,7 @@
  * 
  */
 include "../recursos/funciones.php";
-//controlSesion();
+controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
@@ -14,6 +14,7 @@ $usuario = $_SESSION['usuario'];
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Modificar Cat&aacute;logo</title>
+        <?php fijaPlantillaCSS();?>
         <script type="text/javascript" src="./recursos/funciones.js"></script>
         <style type="text/css">@import url(../css/calendar.css);</style>  
         <script type="text/javascript" src="js/calendar.js"></script>
@@ -89,6 +90,7 @@ $usuario = $_SESSION['usuario'];
                 <input type="reset" value="Borrar campos">
             </fieldset>
         </form>
+        <br><a href="../usuario/menuG.php">Volver al men&uacute;</a>
     </body>
 </html>
 <?php

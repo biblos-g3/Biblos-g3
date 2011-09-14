@@ -1,11 +1,12 @@
 <?php
 include "../recursos/funciones.php";
-//controlSesion();
+controlSesion();
 ?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cpnsulta Espec&iacute;fica</title>
+        <?php fijaPlantillaCSS();?>
     </head>
     <body>
         <form action="cespecificaP.php" method="post">
@@ -23,5 +24,6 @@ include "../recursos/funciones.php";
                 <input type="submit" value="Buscar">
             </fieldset>
         </form>
+        <a href="menuG.php">Volver al men&uacute;</a>
     </body>
 </html>

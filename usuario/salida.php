@@ -7,6 +7,7 @@ if (!$_SESSION['usuario'] || !isset($_SESSION['usuario']))
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
         <title>Salida</title>
     </head>
     <body>
@@ -15,5 +16,6 @@ if (!$_SESSION['usuario'] || !isset($_SESSION['usuario']))
         $_SESSION['usuario'] = "";
         session_destroy();
         ?>
+        <br><a href="../index.php">Voler a loguearse</a>
     </body>
 </html>

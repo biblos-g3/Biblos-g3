@@ -14,6 +14,7 @@ $usuario = $_SESSION['usuario'];
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <?php fijaPlantillaCSS();?>
         <title>Baja Usuario</title>
     </head>
     <body>   
@@ -26,6 +27,7 @@ $usuario = $_SESSION['usuario'];
                     ?>
      			<input type="submit" value="Dar de baja">
             </fieldset>
-        </form>        
+        </form> 
+        <br><a href="../usuario/menuG.php">Volver al men&uacute;</a>
     </body>
 </html>

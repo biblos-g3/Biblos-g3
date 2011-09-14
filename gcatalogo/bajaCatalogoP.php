@@ -14,6 +14,8 @@ $usuario = $_SESSION['usuario'];
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Baja Cat&aacute;logo</title>
+        <?php fijaPlantillaCSS();?>
+        
     </head>
     <body>
         <?php
@@ -41,5 +43,6 @@ $usuario = $_SESSION['usuario'];
         else
             die("Fallo al dar de baja el libro" . mysql_error());
         ?>
+        <br><a href="../usuario/menuG.php">Volver al men&uacute;</a>
     </body>
 </html>

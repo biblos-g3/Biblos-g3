@@ -60,7 +60,7 @@ function obtenerEditorial($id_editorial) {
     $query = "select nombre_editorial from editorial where 
         id_editorial='$id_editorial'";
 
-    echo "-" . $query;
+    //echo "-" . $query;
 
     $resultado = mysql_query($query);
     if ($resultado) {
@@ -269,4 +269,12 @@ function listarCatalogoXCampo($campoBusqueda, $valorBusqueda, $isExact) {
             }
             echo "</select>";
         }  
+        /**
+ * Aqui podemos elegir el tipo de plantilla que queremos
+ * @author Biblos-g3
+ * @version 1.0.1
+ */
+function fijaPlantillaCSS() {
+    echo "<LINK href='../recursos/plantilla" . $_SESSION['tema'] . ".css' rel='stylesheet' type='text/css'>\n";
+}
 ?>

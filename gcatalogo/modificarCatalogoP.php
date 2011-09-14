@@ -6,13 +6,14 @@
  * 
  */
 include "../recursos/funciones.php";
-//controlSesion();
+controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <?php fijaPlantillaCSS();?>
         <title></title>
     </head>
     <body>
@@ -44,5 +45,6 @@ $usuario = $_SESSION['usuario'];
         else
             die("Fallo al modificar libro" . mysql_error());
         ?>
+        <br><a href="../usuario/menuG.php">Volver al men&uacute;</a>
     </body>
 </html>

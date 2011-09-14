@@ -6,7 +6,7 @@
  * 
  */
 include "../recursos/funciones.php";
-//controlSesion();
+controlSesion();
 $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
@@ -15,8 +15,8 @@ $usuario = $_SESSION['usuario'];
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Alta de Cat&aacute;logo</title>
         <style type="text/css">@import url(../css/calendar.css);</style>  
-        
-         <!--<link href="../recursos/" type="text/css" rel="stylesheet" /> -->
+        <?php fijaPlantillaCSS(); ?>
+        <!--<link href="../recursos/" type="text/css" rel="stylesheet" /> -->
         <script type="text/javascript" src="../js/calendar.js"></script>
         <script type="text/javascript" src="../js/calendar-es.js"></script>
         <script type="text/javascript" src="../js/calendar-setup.js"></script>
@@ -52,31 +52,32 @@ $usuario = $_SESSION['usuario'];
                 <input name="edicion" type="text" size="5" maxlength="5" class="Obligado" /><br />
                 <label>*Editorial</label>
                 <?php
-                cargardorLista("editorial", "id_editorial", "nombre_editorial",1,"Seleccione opci&oacute;n");
+                cargardorLista("editorial", "id_editorial", "nombre_editorial", 1, "Seleccione opci&oacute;n");
                 ?>
                 <label>*Idioma</label>
                 <?php
-                cargardorLista("idioma_639_1", "id_idioma_639_1", "idioma_639_1", 1,"Seleccione")
+                cargardorLista("idioma_639_1", "id_idioma_639_1", "idioma_639_1", 1, "Seleccione")
                 ?>
                 <br /><input type="submit" value="Dar de alta">
                 <input type="reset" value="Borrar campos">
             </fieldset>
         </form>
+        <br><a href="../usuario/menuG.php">Volver al men&uacute;</a>
     </body>
     <script type="text/javascript">
 
-       Calendar.setup(
+        Calendar.setup(
         {
             inputField  : "fecha_publicacion",
             ifFormat    : "%d/%m/%Y",
             button      : "trigger"          
         });
         
-       Calendar.setup(
+        Calendar.setup(
         {
             inputField  : "fecha_adquisicion",
             ifFormat    : "%d/%m/%Y",
             button      : "trigger2"          
         });   
-  </script>  
+    </script>  
 </html>
